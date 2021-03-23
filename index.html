@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3D VR Solar System</title>
+    <link rel="icon" href="img/icon.png">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/modalStyle.css">
+    <script src="js/libaries/jquery-3.3.1.min.js"></script>
+    <script src="js/libaries/bootstrap.bundle.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#myModal").modal('show');
+        });
+    </script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+</head>
+
+<body>
+           <div id="myModal" class="modal fade">
+                <div class="modal-dialog">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <h2>Web-Vr 3D Solar System</h2>
+                                        <div class="btnClose" data-dismiss="modal">&times;</div>
+                                </div>
+                                <div class="modal-body">
+                                        <ul>
+                                                <li>By Daniel Thomas</li>
+                                                <li>Best experienced on a VR headset</li>
+                                        </ul>
+                                </div>
+                        </div>
+                </div>
+        </div>
+    <a-scene>
+       
+        <a-assets>
+            <img id="sunText" src="img/sun.jpg">
+            <img id="mercuryText" src="img/mercury.jpg">
+            <img id="venusText" src="img/venus_atmosphere.jpg">
+            <img id="earthText" src="img/earth.jpg">
+            <img id="earthCloudsText" src="img/earth_clouds.png">
+            <img id="marsText" src="img/mars.jpg">
+            <img id="jupiterText" src="img/jupiter.jpg">
+            <img id="saturnText" src="img/saturn.jpg">
+            <img id="saturnRingText" src="img/saturn.jpg">
+            <img id="uranusText" src="img/uranus.jpg">
+            <img id="neptuneText" src="img/neptune.jpg">
+            <img id="skyText" src="img/stars.jpg">
+        </a-assets>
+
+
+        <script>
+          var inst = alert("This is a Web-Vr 3D Solar System. You can navigate through using your mouse and move around using your front/back/left/right arrow keys. ");
+        </script>
+
+        <a-sky src="#skyText"></a-sky>
+        <a-light type="ambient" color="#222"></a-light>
+        <a-light type="spot" angle=180 color="#fff0da" intensity=1.5 position="-20 1.25 -5"></a-light>
+
+        <a-entity id="sun" geometry="primitive: sphere; radius:6;" position="-20 1.25 -5" material="shader: flat; src: #sunText" animation="property: rotation; to: 0 -360 0; easing: linear; loop: true; dur: 200000">
+        </a-entity>
+        <a-entity position="-20 1.25 -5" rotation="0 20 0" animation="property: rotation; to: 0 380 0; easing: linear; loop: true; dur: 18000">
+            <a-entity id="mercury" geometry="primitive: sphere; radius:.1;" position="14 1.25 -5" material="src: #mercuryText" animation="property: rotation; to: 0 360 0; easing: linear; loop: true; dur: 18000">
+            </a-entity>
+        </a-entity>
+
+        <a-entity position="-20 1.25 -5" rotation="0 -80 0" animation="property: rotation; to: 0 280 0; easing: linear; loop: true; dur: 22000">
+            <a-entity id="venus" geometry="primitive: sphere; radius:.3;" position="16 1.25 -5" material="src: #venusText" animation="property: rotation; to: 0 360 0; easing: linear; loop: true; dur: 18000">
+            </a-entity>
+        </a-entity>
+
+        <a-entity position="-20 1.25 -5" rotation="0 -120 0" animation="property: rotation; to: 0 240 0; easing: linear; loop: true; dur: 24000">
+            <a-entity id="earth" geometry="primitive: sphere; radius:.3;" position="18 1.25 -5" material="src: #earthText" animation="property: rotation; to: 0 360 0; easing: linear; loop: true; dur: 18000">
+                <a-sphere transparent=true radius=".3" src="#earthCloudsText"></a-sphere>
+            </a-entity>
+        </a-entity>
+        <a-entity position="-20 1.25 -5" rotation="0 -20 0" animation="property: rotation; to: 0 340 0; easing: linear; loop: true; dur: 27000">
+            <a-entity id="mars" geometry="primitive: sphere; radius:.15;" position="20 1.25 -5" material="src: #marsText" animation="property: rotation; to: 0 360 0; easing: linear; loop: true; dur: 18000">
+            </a-entity>
+        </a-entity>
+
+        <a-entity position="-20 1.25 -5" rotation="0 0 0" animation="property: rotation; to: 0 360 0; easing: linear; loop: true; dur: 32000">
+            <a-entity id="jupiter" geometry="primitive: sphere; radius:1;" position="22 1.25 -5" material="src: #jupiterText" animation="property: rotation; to: 0 360 0; easing: linear; loop: true; dur: 20000">
+            </a-entity>
+        </a-entity>
+        <a-entity position="-20 1.25 -5" rotation="0 -100 0" animation="property: rotation; to: 0 260 0; easing: linear; loop: true; dur: 35000">
+            <a-entity id="saturn" geometry="primitive: sphere; radius:.7;" position="25 1.25 -5" material="src: #saturnText" animation="property: rotation; to: 0 360 0; easing: linear; loop: true; dur: 20000">
+                <a-cylinder transparent=true src="img/ring.png" height=".0001" radius="1.5" rotation="10 10 20" animation="property: rotation; to: 0 -360 0; easing: linear; loop: true; dur: 20000"></a-cylinder>
+            </a-entity>
+        </a-entity>
+        <a-entity position="-20 1.25 -5" rotation="0 80 0" animation="property: rotation; to: 0 440 0; easing: linear; loop: true; dur: 37000">
+            <a-entity id="uranus" geometry="primitive: sphere; radius:.5;" position="27.5 1.25 -5" material="src: #uranusText" animation="property: rotation; to: 0 -360 0; easing: linear; loop: true; dur: 20000">
+            </a-entity>
+        </a-entity>
+        <a-entity position="-20 1.25 -5" rotation="0 -100 0" animation="property: rotation; to: 0 260 0; easing: linear; loop: true; dur: 40000">
+            <a-entity id="neptune" geometry="primitive: sphere; radius:.4;" position="29 1.25 -5" material="src: #neptuneText" animation="property: rotation; to: 0 -360 0; easing: linear; loop: true; dur: 20000">
+            </a-entity>
+        </a-entity>
+
+    </a-scene>
+</body></html>
