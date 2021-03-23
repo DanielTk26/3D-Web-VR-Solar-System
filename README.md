@@ -1,5 +1,5 @@
 # [3D Web VR Solar System]( https://danieltk26.github.io/3D-Web-VR-Solar-System/)</h2>
-VR | Experience | 3D | Enjoy !
+Vertual-Reality | Experience | 3D | Enjoy !
 
 ![alt text](demo.gif)
 <p align="center">
