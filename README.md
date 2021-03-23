@@ -1,7 +1,7 @@
 # [3D Web VR Solar System]()</h2>
 VR | Experience | 3D | Enjoy !
 
-![alt text](demo.mp4)
+![alt text](demo.gif)
 <p align="center">
   <b><i>3D Web VR Solar System Demo</i></b>
 
